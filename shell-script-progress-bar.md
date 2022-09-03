@@ -1,13 +1,13 @@
 # shell script progress bar
 
 1. 很多鬼神方式
-    
+
     [How to add a progress bar to a shell script?](https://stackoverflow.com/questions/238073/how-to-add-a-progress-bar-to-a-shell-script)
-    
+
 2. 簡單版
-    
+
     [How to add a progress bar to a shell script?](https://stackoverflow.com/a/28044986)
-    
+
     ```bash
     #!/bin/bash
     # 1. Create ProgressBar function
@@ -42,11 +42,11 @@
     done
     printf '\nFinished!\n'
     ```
-    
+
 3. 有 spinner 版
-    
+
     [基于shell实现linux下命令行进度条_ronnie88597的博客-CSDN博客_shell进度条直到命令结束](https://blog.csdn.net/weixin_46222091/article/details/104855431)
-    
+
     ```bash
     #!/bin/bash
     function ProgressBar {
