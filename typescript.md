@@ -33,10 +33,10 @@ npx tsc <source> <destination>
 ```json
 {
   "compilerOptions": {
-    ...
+    // ...
       "rootDir": "./src",
       "outDir": "./public",
-    ...
+    // ...
   }
 }
 ```
@@ -55,11 +55,11 @@ error TS6059: File '<dir_path>/app.ts' is not under 'rootDir' '<dir_path>/src'. 
 
 ```json
 {
-  ...
+  // ...
   "include": [
     "src"
   ]
-  ...
+  // ...
 }
 ```
 
