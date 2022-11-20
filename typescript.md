@@ -188,3 +188,42 @@ greet = (name, greeting) => { // 這邊的 name 跟 greeting 不用叫做 a 跟 
   console.log(`${name} says ${greeting}`)
 }
 ```
+
+## DOM Element
+
+如果用 `querySelector()` 去拿一個 DOM 物件，typescript 會不確定會不會是 null，有兩種解決方法：
+
+```js
+const anchor = document.querySelector('a')
+console.log(anchor.href) // Object is possibly 'null'.
+
+// solution 1.
+if (anchor) {
+  console.log(anchor.href)
+}
+
+// solution 2.
+const anchor = document.querySelector('a')! // 加上 `!` 表示你知道一定會有值，而不是 null
+```
+
+## Type Casting
+
+如果直接 select 一個 HTML tag，typescript 會知道它是一個特定的 HTML Element：
+
+```js
+const form = document.querySelector('form')! // const form: HTMLFormElement
+```
+
+如果是用其他像是 ID 或 class name 去 select 的話，typescript 只會知道他是一個 Element：
+
+```js
+const form = document.querySelector('.new-item-form')! // const form: Element
+```
+
+這個時候可以用 `as` 來做 Type Casting：
+
+```js
+const form = document.querySelector('.new-item-form') as HTMLFormElement
+```
+
+這樣就可以繼續享受 VSCode 的 autocomplete。
